@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" id="form">
+        <input type="text"  id="name" placeholder="products name">
+        <input type="text" name="category" id="category" placeholder="category">
+        <input type="number" id="price" placeholder="price">
+        <input type="url" name="image" id="image" placeholder="image-url">
+        <select name="gender" id="gender">
+            <option value="">gender</option>
+            <option value="male">male
+
+            </option>
+            <option value="female">female</option>
+        </select>
+        <input type="checkbox" name="sold" id="sold" checked name="sold" > 
+        <input onclick="ram(event)" type="submit" name="" id="submit">
+    </form>
+</body>
+</html>
+<script>
+    function Shiv(n,c,p,i,g){
+       this.name = n,
+       this.category=c,
+       this.price=p,
+       this.image =i,
+       this.gender=g
+        
+    }
+    var arr = []
+    function ram(event){
+        event.preventDefault()
+        let form = document.getElementById("form")
+        this.name = form.name.value,
+        this.category=form.category.value,
+        this.price =form.price.value,
+        this.image = form.image.value,
+        this.gender = form.gender.value
+        let products = new Shiv(name,category,price,image,gender)
+        arr.push(products)
+        localStorage.setItem("Products",JSON.stringify(arr))
+    }
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+let amar = {
+    quality:"singer",
+    city:"goa",
+    Mytalent:function(){
+        console.log(`you can be ${this.quality} in my ${this.city}`)
+    }
+
+}
+let akbar = {
+    quality:"chef",
+    city:"mumbai",
+
+
+}
+let anthony = {
+    quality:"magician",
+    city:"kashmir",
+
+}
+amar.Mytalent()
+amar.Mytalent.call(akbar)
+amar.Mytalent.call(anthony)
+
+</script>

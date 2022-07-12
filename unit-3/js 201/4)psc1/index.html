@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #navbar{
+            /* display: flex; */
+            height: 50px;
+            width: 100%;
+            background-color: teal;
+            color: white;
+            /* justify-content: space-around; */
+            gap: 20%;
+
+        }
+        #main{
+          
+       margin-top: 150px;
+       margin-left: 40%;
+       height: 200px;
+       width: 20%;
+       
+        }
+        #form{
+            background-color: black;
+            color: white;
+            margin-top: 20px;
+          
+            display: grid;
+        }
+        /* #count{
+            display: flex;
+            justify-content: space-between;
+        } */
+    </style>
+</head>
+<body>
+   <div id="navbar">
+    Web18:-
+    
+    <span id="count" >count
+        
+    </span>
+   </div> 
+   <div id="main">
+    <form onsubmit="calculate()" action="" id="form">
+        <!-- name, course,unit,batch ,image -->
+        <input type="url" id="image" placeholder="photo">
+        <input type="name" id="name" placeholder="name">
+        <input type="text" id="course" placeholder="course">
+        <input type="number" id="unit" placeholder="unit">
+        <input type="text" id="batch" placeholder="batch">
+        <input onclick="getData(event)"  type="submit" name="" id="submit" value="MASAI">
+    </form>
+   </div>
+</body>
+</html>
+<script src="index.js"></script>
+

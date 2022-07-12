@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #yogu{
+            display: grid;
+            margin-left: 30%;
+            border: 1 px solid black;
+            height: 500px;
+            width: 60%;
+          
+        }
+        /* .pic{
+            
+            height: 200px;
+            width: 200px;
+        } */
+    </style>
+</head>
+<body>
+    <div id="yogu"></div>
+</body>
+</html>
+<script>
+    let TATA = {
+  tyre:"ceat",
+  stearing:"v shaped",
+  engine:"1200cc",
+  design:"classic",
+  Image:"https://images.unsplash.com/photo-1542362567-b07e54358753?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTd8fGNhcnN8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60"
+}
+let arr = []
+
+let alto = Object.create(TATA)
+let nano =Object.create(TATA)
+let swift =Object.create(TATA)
+let mercedez =Object.create(TATA)
+let benz =Object.create(TATA)
+arr.push(alto,nano,swift,mercedez,benz)
+// localStorage.setItem("cars",JSON.stringify(arr))
+  arr.forEach(function(ele){
+   // JSON.parse(localStorage.getItem("cars"))
+   let tyre = document.createElement("p")
+    tyre.innerText=ele.tyre
+
+    let stearing = document.createElement("p")
+    stearing.innerText=ele.stearing
+    let engine = document.createElement("p")
+    engine.innerText=ele.engine
+    let design = document.createElement("p")
+    design.innerText=ele.design
+    let photo = document.createElement("img")
+    photo.src = ele.Image
+    photo.setAttribute("class","pic")
+    document.getElementById("yogu").append(photo,tyre,stearing,engine,design)
+
+  })
+    
+
+
+console.log(alto)
+</script>
+

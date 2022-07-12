@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 100%;
+            height: 800px;
+            border: 1px solid black;
+        }
+        .yogu{
+            background-color: red;
+            color: aliceblue;
+            margin-right: 10px;
+        }
+        .guddu{
+            background-color: green;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+  <div id="container"></div>  
+</body>
+</html>
+<script>
+    var products = JSON.parse(localStorage.getItem("Products"))
+    products.forEach(function(elem){
+        var name = document.createElement("p")
+        name.innerText=elem.name
+        var daam = document.createElement("p")
+        daam.innerText=elem.price
+        var photo = document.createElement("img")
+        photo.src = elem.image
+        var gender = document.createElement("p")
+        gender.innerText=elem.gender
+        var khatka1 = document.createElement("button")
+        khatka1.innerText="Remove"
+        khatka1.setAttribute("class","yogu")
+        var khatka2 = document.createElement("button")
+        khatka2.innerText="sold"
+        khatka2.setAttribute("class","guddu")
+        document.getElementById("container").append(photo,name,daam,gender,khatka1,khatka2)
+    })
+    
+     
+</script>
