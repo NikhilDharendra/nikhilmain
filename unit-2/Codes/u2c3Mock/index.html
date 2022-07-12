@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U2C3 Mock</title>
+    <style>
+.masai{
+  background-color: blue;
+}
+    </style>
+  </head>
+  <body>
+    <div id="container"></div>
+    <form>
+      <select id="month">
+        <option value="January">JANUARY</option>
+        <option value="February">FEB</option>
+        <option value="MARCH">MARCH</option>
+        <option value="APRIL">APRIL</option>
+        <option value="MAY">MAY</option>
+        <option value="JUNE">JUNE</option>
+        <option value="JULY">JULY</option>
+        <option value="AUGUST">AUGUST</option>
+        <option value="SEPETEMBER">SEPETEMBER</option>
+        <option value="OCTOBER">OCTOBER</option>
+        <option value="NOVEMBER">NOVEMBER</option>
+        <option value="DECEMBER">DECEMBER</option>
+      </select>
+
+      <input id="income" type="number" placeholder="Enter Income" />
+
+      <input id="expense" type="number" placeholder="Enter expense" />
+
+      <input type="submit" />
+    </form>
+
+    <div id="report">
+          <!-- Append your cards here -->
+    </div>
+  </body>
+</html>
+
+<script>
+  var data = [{month:january,income:15000,expenses:12000},
+  {month:feb,income:14000,expenses:11000},
+  {month:march,income:13000,expenses:10000},
+  {month:april,income:12000,expenses:9000}
+  ];
+  data.foreach(function(elem)
+{
+  var box = document.createElement("div")
+  box.setAttribute("class", "masai")
+  var names = document.createElement("h1");
+  names.innerText=elem.month
+  var income2 = document.createElement("h3")
+  income2.innerText=elem.income
+  var exp = document.createElement("p");
+  exp.innerText=elem.expenses
+  document.querySelector("#container").append(box)
+  box.append(names,income2,exp);
+  
+}
+ 
+  );
+</script>
