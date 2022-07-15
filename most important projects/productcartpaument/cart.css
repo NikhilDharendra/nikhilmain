@@ -1,0 +1,121 @@
+#form_nikhil{
+    display: flex;
+    justify-content: center;
+  }
+  #cart{
+    width: 100%;
+        border: 1px;
+        /* height: 500px; */
+        display: flex;
+        flex-wrap: wrap;
+        /* margin-left: 40%; */
+    }  
+    #outer_div{
+      
+      border: 1px solid;
+      border-radius: 5px;
+      width: 43%;
+      height: 500px;
+      margin-top: 0.5%;
+      /* margin-left: 30%; */
+     
+      box-shadow: black 0px 5px 15px;
+      background-color: white;
+    
+    }   
+    #submit_nik{
+      margin-top: 5%;
+      background-color:rgb(151, 12, 12);
+      font-size: 20px;
+      color: white;
+      height: 35px;
+      width: 150px;
+      border-color:rgb(151, 12, 12) ;
+      box-shadow:rgb(102, 74, 74) 1px 1px 1px 1px ;
+      border-radius: 1px;
+      font-size: larger;
+  
+   }
+   #promo{
+      margin-top: 5%;
+   }
+   
+  #amount{
+    font-size: 20px;
+    margin-left: 30%;
+   
+  }
+  
+  .text_part{
+    text-align: center;
+    color: rgb(77, 74, 74);
+    line-height: 25px;
+  }
+  
+  .btn_nikhil{
+    background-color:mediumaquamarine;
+    color:black;
+    margin-left: 35%;
+    text-decoration: none;
+    width: 150px;
+    height: 30px;
+    border: 0.2px solid black;
+    border-radius: 2px;
+    box-shadow:black 2px 2px 2px 2px;
+    }
+    .delete_btn{
+      background-color: teal;
+      color: white;
+      padding: 5px 25px 5px 25px;
+      border-radius: 5px;
+      cursor: pointer;
+
+    }
+    #top_button{
+      height: 35px;
+      width: 100px;
+      background-color: black;
+      color: white;
+    }
+    #antim_line{
+      text-align: center;
+    }
+    .box1{
+      display: flex;
+      margin-left: 2%;
+      width: 70%;
+      border: 1px;
+      margin-left: 5%;
+    
+  }
+  
+  .price{
+      color: blue;
+      text-decoration: line-through;
+  }
+  
+  .dis{
+    font-size: 20px;
+    color: brown;
+    margin: 15px 0px 15px 0px ;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
