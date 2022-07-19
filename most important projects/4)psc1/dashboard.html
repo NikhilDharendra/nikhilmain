@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #dashboard{
+            
+            width: 100%;
+           
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: auto;
+        
+
+        }
+        .gunda{
+            height: 300px;
+            width: 300px;
+        }
+        #navbar{
+            height: 50px;
+            width: 100%;
+            background-color: teal;
+            color: white;
+
+        }
+        #count{
+            display: flex;
+            justify-content: space-between;
+        }
+        .khatka{
+            height: 20px;
+            width: 70px;
+            background-color: black;
+            color: white;
+        }
+        .main_box{
+            background-color: rgb(3, 78, 53);
+         
+        }
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <span id="count">count:-</span>
+       </div> 
+    <div id="dashboard"></div>
+</body>
+</html>
+<script src="dashboard.js"></script>

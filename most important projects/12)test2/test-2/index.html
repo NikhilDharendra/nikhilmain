@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+      #navbar{
+        height: 40px;
+        width: 100%;
+        background-color: black;
+        /* background-color: cadetblue; */
+        /* background-color: forestgreen; */
+        /* background-color: indigo; */
+        /* background-color: rgb(1, 83, 81); */
+        /* background-color: olive; */
+        /* background-color: salmon; */
+        color: white;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      #groceries{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        margin-left: 5px;
+        margin-right: 5px;
+        gap: 10px;
+      }
+      .photo{
+        height: 300px;
+        width: 60%;
+      }
+      .nav_item{
+        font-size: large;
+        margin-top: 10px;
+      }
+      .add_to_cart{
+        height: 30px;
+        width: 110px;
+        border-radius: 5px;
+        border: none;
+        box-shadow: 1px 1px 1px 1px white;
+
+
+        background-color: mediumseagreen;
+        color: white;
+      }
+      .item{
+        gap: 10px;
+        /* height: 400px;
+        width: 80%; */
+        margin-top: auto;
+        margin-left: 60px;
+        /* padding: 20px; */
+        /* margin-right: 20px; */
+        /* box-shadow: 2px 2px 2px 2px black; */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar">
+      <div class="nav_item">login</div>
+      <div class="nav_item">Sign-Up</div>
+      
+      <div class="nav_item" id="cart"> <a href="cart.html">cart</a> </div>
+      <div class="nav_item">wallet:-<span class="nav_item" id="wallet">700</span></div>
+      
+      <!-- Give cart link for navigation with id:- cart   -->
+      <!-- For wallet amount Show only number i.e only "500", no extra text like "amount = 500" with id :- "wallet" -->
+    </div >
+    <div id="groceries">
+
+    </div>
+
+    <!--Show all groceries here in grid format-->
+    <!-- add an add to cart button to each item, give it HTML class as 'add_to_cart' -->
+  </body>
+</html>
+<script src="./scripts/index.js"></script>

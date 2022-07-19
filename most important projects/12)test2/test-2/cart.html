@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      *{
+        margin: 0px;
+        padding: 0px;
+      }
+      #cart{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 10px;
+      }
+      .photo{
+        height: 300px;
+        width: 60%;
+      }
+      h2{
+        color: orangered;
+      }
+      .top_cart{
+        height: 40px;
+        width: 100%;
+        display: flex;
+        background-color: black;
+        /* justify-content: space-between; */
+
+      }
+      .item{
+        margin-left: 60px;
+      }
+      .remove{
+      background-color: red;
+      color: white;
+      height: 30px;
+      width: 90px;
+      border: none;
+      border-radius: 5px;
+      margin-left: 50px;
+      }
+      .text{
+        margin-left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top_cart" >
+      <h2 id="cart_total"></h2>
+       <!-- kharcha:-<span id="cart_total">kharcha:-</span> --> -->
+      <!--Show cart total with id:- "cart_total" here, do not add anything only Total value. Not even "Total - 1200Rs" but like this "1200" -->
+    </div>
+    <div id="cart">
+      <!--Show items added to cart here-->
+      <!-- add an remove button to each item so that you can remove that dish from cart, give the button HTML class as 'remove' -->
+    </div>
+   <button id="checkout" > <a href="checkout.html">checkout</a> </button>
+    <!-- Provide a checkout button with id as "checkout" to go to checkout.html page -->
+  </body>
+</html>
+<script src="./scripts/cart.js"></script>

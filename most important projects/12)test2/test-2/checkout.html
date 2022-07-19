@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout</title>
+  </head>
+  <style>
+    *{
+      margin: 0px;
+      padding: 0px;
+
+    }
+    #submit{
+      background-color: black;
+      color: rgb(236, 69, 8);
+      font-size: larger;
+      height: 30px;
+      width: auto;
+    }
+  
+    #form{
+      display: flex;
+      flex-direction: column;
+      padding-top: 120px;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+    #navbar{
+        height: 40px;
+        width: 100%;
+        background-color: black;
+        /* background-color: cadetblue; */
+        /* background-color: forestgreen; */
+        /* background-color: indigo; */
+        /* background-color: rgb(1, 83, 81); */
+        /* background-color: olive; */
+        /* background-color: salmon; */
+        color: white;
+        display: flex;
+        justify-content: space-evenly;
+      }
+      .nav_item{
+        font-size: large;
+        margin-top: 10px;
+      }
+      #order-form{
+      height: 400px;
+      width: 400px;
+      /* margin-left: 33%; */
+      margin-right: 33%;
+      margin-top: 100px;
+      /* border: 20px solid black; */
+      box-shadow: 4px 4px 4px 4px black;
+      
+    }
+  </style>
+
+  <body>
+    <div id="navbar">
+      <div class="nav_item">login</div>
+      <div class="nav_item">Sign-Up</div>
+      
+      <div class="nav_item" id="cart"> <a href="cart.html">cart</a> </div>
+      <div class="nav_item">wallet:-<span class="nav_item" id="wallet">700</span></div>
+    <div id="order-form">
+      <form action="" id="form">
+        <input type="text" id="user_name" placeholder="name">
+        <input type="number" name="" id="user_number" placeholder="number">
+        <input type="text" name="" id="user_address" placeholder="address">
+        <input onclick="nikhil()" type="submit" name="" id="submit" value="submit">
+      </form>
+      <!--Add your form html element here-->
+      <!--In form, give #user_name,#user_number and #user_address as HTML id's to relevant input elements -->
+    </div>
+  </body>
+</html>
+<script src="./scripts/checkout.js"></script>
