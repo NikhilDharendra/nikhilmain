@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicate</title>
+    <style>
+         *{
+            margin:0px;
+            padding:0px;
+            color:#3F414D;
+            font-size: 14px;
+            font-family:'inter',sans-serif ;
+        }
+        #back{
+            background-color:#F3F3F3;
+        }
+        .card{
+            width:25%;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            margin:auto;
+            margin-bottom: 30px;
+            margin-top: 10px;
+            padding:5px;
+        }
+        .super1{
+          display:flex;
+        }
+        .img_box{
+            width:80%;
+        }
+        .img{
+            width:90%;
+        }
+        .super1>div:nth-child(1){
+            width:30%;
+        }
+        .super1>div:nth-child(2){
+            width:95%;
+            line-height: 20px;
+            margin-left:20px;
+        }
+        .fav{
+            width:100%;
+            display:block;
+            margin:auto;
+        }
+       .bin_box{
+            width:5%;
+            margin-top:2%;
+        }
+        .super2{
+            display:flex;
+            justify-content: space-between;
+            padding:8px 0px;
+        }
+        .super2>select{
+            border:none;
+        }
+        #priceDetails{
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            width:25%;
+            margin:auto;
+        }
+        .sub_bag1,.ship_ch{
+            display:flex;
+            justify-content: space-between;
+            margin:6px 0px;
+        }
+        .pay_head{
+            font-size: 16px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .overall_price{
+            display:flex;
+            justify-content: space-between;
+            font-size: 16px;
+            font-weight: bold;
+            margin:6px 0px;
+        }
+        #finalBlock{
+            display:inline-block;
+        }
+        #next{
+            width:25%;
+            margin:auto;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            display:flex;
+            justify-content: space-between;
+        }
+        #next>button{
+            width:50%;
+            color:white;
+            background-color:#FC2779 ;
+            font-size: 16px;
+            font-weight: bold;
+            padding:8px 20px;
+            border:none;
+        }
+        #finalBlock>p:last-child{
+            color:#FC2779;
+        }
+    </style>
+</head>
+<body id="back">
+    
+</body>
+</html>
+<script>
+//var productArr= JSON.parse(localStorage.getItem("Selected Items"))||[];
+var updatedArr=[];
+
+        var cart_title=document.createElement("p");
+        cart_title.setAttribute("class","pay_head");
+        cart_title.innerText="Shopping Bag";
+        document.querySelector("body").append(cart_title);
+
+        function data(productData){
+        productData.forEach(function(ele,index){
+        var eventOccured=false;
+        var card=document.createElement("div");
+        card.setAttribute("class","card");
+        
+        var box1=document.createElement("div");
+        box1.setAttribute("class","img_box")
+        var image=document.createElement("img");
+        image.setAttribute("class","img");
+        image.setAttribute("src",ele.img);
+        box1.append(image);
+
+        var sub_box21=document.createElement("p");
+        sub_box21.innerText=ele.name;
+        var sub_box22=document.createElement("p");
+        sub_box22.innerText=ele.type;
+        var box2=document.createElement("div");
+        box2.append(sub_box21,sub_box22);
+
+        var fav_icon=document.createElement("img");
+        fav_icon.setAttribute("class","fav");
+        fav_icon.setAttribute("src","https://t4.ftcdn.net/jpg/00/98/26/11/240_F_98261175_Sv69O3rZsHApYkjAdrWbgQixYHwyZyOr.jpg");
+        var box3=document.createElement("div");
+        box3.setAttribute("class","bin_box");
+        box3.append(fav_icon);
+        
+        box3.addEventListener("click",function(){
+           deleteElement(ele,index);
+        });
+        
+        var super_box1=document.createElement("div");
+        super_box1.setAttribute("class","super1");
+        super_box1.append(box1,box2,box3);
+        
+        var line=document.createElement("hr");
+
+        var box4=document.createElement("select");
+        var o=document.createElement("option");
+        o.setAttribute("value","1");
+        o.innerText="Quantity";
+        
+        var o1=document.createElement("option");
+        o1.setAttribute("value","1");
+        o1.innerText="1";
+        var o2=document.createElement("option");
+        o2.setAttribute("value","2");
+        o2.innerText="2";
+        var o3=document.createElement("option");
+        o3.setAttribute("value","3");
+        o3.innerText="3";
+        var o4=document.createElement("option");
+        o4.setAttribute("value","4");
+        o4.innerText="4";
+        var o5=document.createElement("option");
+        o5.setAttribute("value","5");
+        o5.innerText="5";
+
+        box4.append(o,o1,o2,o3,o4,o5);
+        
+        var box5=document.createElement("div");
+        box5.setAttribute("class","price_box");
+        var sub_box51=document.createElement("p");
+        sub_box51.innerText="₹"+Number(ele.price)*Number(box4.value);
+        
+        updatedArr.push(Number(ele.price));
+        
+        var sum=updatedArr.reduce(function(acc,ele){
+                 return acc+ele;
+        },0) 
+        console.log(sum);
+        box4.addEventListener("change",function(){
+        eventOccured=true;
+        myFunc(ele,index);
+        })
+        function myFunc(ele,index){
+            var x=Number(ele.price)*Number(box4.value);
+            sub_box51.innerText=x;
+            updatedArr[index]=x
+            localStorage.setItem("Q Items",JSON.stringify(updatedArr));
+            var sum=updatedArr.reduce(function(acc,ele){
+                 return acc+ele;
+            },0) 
+             
+             bag_total.innerText="₹"+sum;
+             if(sum<=499){
+                 ship_ch.innerText="Free";
+             }
+             else if(sum<2000){
+                 ship_ch.innerText=+50;
+             }
+             else if(sum<3500){
+                 ship_ch.innerText=+100;
+             }
+             else{
+                 ship_ch.innerText=+150;
+             }
+            if(ship_ch.innerText=="Free"){
+                gr_total.innerText="₹"+sum;
+            }
+            else if(ship_ch.innerText!="Free"){
+                var sum_Total=sum+Number(ship_ch.innerText);
+                gr_total.innerText="₹"+sum_Total;
+            }
+        }
+        box5.append(sub_box51);
+        var super_box2=document.createElement("div");
+        super_box2.setAttribute("class","super2");
+        super_box2.append(box4,box5);
+        card.append(super_box1,line,super_box2);
+        
+        document.querySelector("body").append(card);
+    })
+    function deleteElement(ele,index){
+        productArr.splice(index,1);
+        localStorage.setItem("Selected Items",JSON.stringify(productArr));
+        window.location.reload();
+    }
+    var pDetail_head=document.createElement("p");
+    pDetail_head.setAttribute("class","pay_head");
+    pDetail_head.innerText="Payment Details";
+    var line2=document.createElement("hr");
+    var paymentData=document.createElement("div");
+    paymentData.setAttribute("id","priceDetails");
+
+    var des1=document.createElement("div");
+    des1.innerText="Bag Total";
+    var bag_total=document.createElement("div");
+    bag_total.innerText="₹0";
+
+    var block1=document.createElement("div");
+    block1.setAttribute("class","sub_bag1");
+    block1.append(des1,bag_total);
+
+    var des4=document.createElement("div");
+    des4.innerText="Shipping Charge";
+    var ship_ch=document.createElement("div");
+    ship_ch.innerText="₹0";
+
+    var block4=document.createElement("div");
+    block4.setAttribute("class","ship_ch");
+    block4.append(des4,ship_ch);
+
+    var des5=document.createElement("div");
+    des5.innerText="Grand Total";
+    var gr_total=document.createElement("div");
+    gr_total.innerText="₹0";
+
+    var block5=document.createElement("div");
+    block5.setAttribute("class","overall_price");
+    block5.append(des5,gr_total);
+    
+    paymentData.append(pDetail_head,line2,block1,block4,block5);
+    
+    var finalBlock=document.createElement("div");
+    finalBlock.setAttribute("id","finalBlock")
+    var fb11=document.createElement("p");
+    fb11.innerText="Grand Total:";
+    var fb12=document.createElement("p");
+    fb12.innerText="₹0";
+    finalBlock.append(fb11,fb12);
+    var but=document.createElement("button");
+    but.innerText="Proceed >";
+    var next=document.createElement("div");
+    next.setAttribute("id","next")
+    next.append(finalBlock,but);
+    document.querySelector("body").append(paymentData,next);
+    
+    but.addEventListener("click",paymentPage);
+    function paymentPage(){
+        window.location.href="payment.html";
+    }
+
+}
+
+data(productArr);
+</script>
+
+
+
+
